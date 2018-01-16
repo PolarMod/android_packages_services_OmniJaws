@@ -30,7 +30,7 @@
             android:exported="true"
             android:label="@string/settings_title"
             android:launchMode="singleTop"
-            android:theme="@style/Theme.Settings" >
+            android:theme="@style/OmniJawsTheme" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -42,7 +42,7 @@
             android:exported="true"
             android:label="@string/settings_title"
             android:launchMode="singleTop"
-            android:theme="@style/Theme.Settings" >
+            android:theme="@style/OmniJawsTheme" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -59,7 +59,7 @@
             android:exported="true"
             android:readPermission="org.omnirom.omnijaws.READ_WEATHER" />
 
-	<receiver android:name=".SystemReceiver" 
+	<receiver android:name=".SystemReceiver"
 		  android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
@@ -69,7 +69,7 @@
         <!-- name is used a prefix +"_" for images e.g. weather_<condition_id>
              weather_foo_<condition_id> -->
         <activity android:name=".google"
-                  android:label="Google" 
+                  android:label="Google"
                   android:exported="true">
             <intent-filter>
                 <action android:name="org.omnirom.WeatherIconPack" />
@@ -78,7 +78,7 @@
         </activity>
 
         <activity android:name=".outline"
-                  android:label="Outline" 
+                  android:label="Outline"
                   android:exported="true">
             <intent-filter>
                 <action android:name="org.omnirom.WeatherIconPack" />
@@ -103,8 +103,7 @@
 
         <activity
             android:name=".widget.WeatherAppWidgetConfigure"
-            android:theme="@style/Theme.Settings"
-            android:exported="true">
+            android:theme="@style/OmniJawsTheme">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
             </intent-filter>
