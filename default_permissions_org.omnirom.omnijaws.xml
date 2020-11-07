@@ -1,6 +1,7 @@
 <?xml version='1.0' encoding='utf-8' standalone='yes' ?>
 <!--
      Copyright (C) 2018-2020 Syberia Project
+     Copyright (C) 2023 PolarMod Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -35,5 +36,11 @@
         <permission name="android.permission.ACCESS_FINE_LOCATION" fixed="true" />
         <permission name="android.permission.ACCESS_COARSE_LOCATION" fixed="true" />
         <permission name="android.permission.ACCESS_BACKGROUND_LOCATION" fixed="true" />
+        <permission name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
+        <permission name="android.permission.WAKE_LOCK" />
+        <permission name="android.permission.ACCESS_NETWORK_STATE" />
+        <permission name="android.permission.INTERNET" />
+        <permission name="android.permission.RECEIVE_BOOT_COMPLETED" />
+        <permission name="android.permission.WRITE_SETTINGS" />
     </exception>
 </exceptions>
