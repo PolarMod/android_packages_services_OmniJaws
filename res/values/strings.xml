@@ -17,7 +17,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <string name="app_name" translatable="false">OmniJaws</string>
+    <string name="app_name">OmniJaws weather provider</string>
     <string name="provider_title">Weather provider</string>
     <string name="units_title">Unit</string>
     <string name="provider_openweathermap" translatable="false">OpenWeatherMap</string>
@@ -64,5 +64,4 @@
     <string name="omnijaws_service_error_marker" translatable="false">*</string>
     <string name="with_forecast_title">With 4-day forecast and details</string>
     <string name="omnijaws_city_unkown">Unknown</string>
-
 </resources>
