@@ -43,7 +43,7 @@ public class METNorwayProvider extends AbstractWeatherProvider {
     private static final String PART_COORDINATES =
             "lat=%f&lon=%f";
     private static final String URL_PLACES =
-            "http://api.geonames.org/searchJSON?q=%s&lang=%s&username=omnijaws&isNameRequired=true";
+            "https://api.geonames.org/searchJSON?q=%s&lang=%s&username=omnijaws&isNameRequired=true";
 
     private static final SimpleDateFormat gmt0Format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'", Locale.US);
     private static final SimpleDateFormat userTimeZoneFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'", Locale.US);
