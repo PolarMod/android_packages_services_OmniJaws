@@ -53,22 +53,35 @@ public abstract class AbstractWeatherProvider {
     }
 
     protected String retrieve(String _url) {
-        URL url = new URL(_url);
-        HttpURLConnection conn = (HttpsURLConnection) url.openConnection();
-        conn.setRequestProperty("Host", url.getHost());
-        conn.setRequestProperty("User-agent", UA);
-        conn.setRequestMethod("GET");
-        conn.setReadTimeout(60000);
-        conn.setConnectTimeout(5000);
-        conn.setDoInput(true);
-        BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-        StringBuilder buffer = new StringBuilder("");
-        String line = "";
-        while ((line = in.readLine()) != null) {
-            buffer.append(line);
-        }
-        in.close();
-        return buffer.toString();
+        try {
+            URL url = new URL(_url);
+            HttpURLConnection conn = (HttpsURLConnection) url.openConnection();
+            conn.setRequestProperty("Host", url.getHost());
+            conn.setRequestProperty("User-agent", UA);
+            conn.setRequestMethod("GET");
+            conn.setReadTimeout(60000);
+            conn.setConnectTimeout(5000);
+            conn.setDoInput(true);
+            BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+            StringBuilder buffer = new StringBuilder("");
+            String line = "";
+            while ((line = in.readLine()) != null) {
+                buffer.append(line);
+            }
+            in.close();
+            return buffer.toString();
+        } catch (java.io.FileNotFoundException e) {
+            Log.e(TAG, "Remote reported error");
+            e.printStackTrace();
+            return null;
+        } catch (IOException e) {
+            Log.e(TAG, "Error while getting response");
+            e.printStackTrace();
+            return null;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        } 
     }
 
     public abstract WeatherInfo getCustomWeather(String id, boolean metric);
