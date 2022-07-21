@@ -27,12 +27,24 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.nio.charset.StandardCharsets;
+
+import javax.net.ssl.HttpsURLConnection;
+
 import android.content.Context;
 import android.location.Location;
 import android.util.Log;
 
 public abstract class AbstractWeatherProvider {
     private static final String TAG = "AbstractWeatherProvider";
+    private final String UA = "OmniJaws/1.2-polar";
     private static final boolean DEBUG = true;
     protected Context mContext;
 
@@ -40,23 +52,23 @@ public abstract class AbstractWeatherProvider {
         mContext = context;
     }
 
-    protected String retrieve(String url) {
-        HttpGet request = new HttpGet(url);
-        try {
-            HttpResponse response = new DefaultHttpClient().execute(request);
-            int code = response.getStatusLine().getStatusCode();
-            if (code != HttpStatus.SC_OK) {
-                log(TAG, "HttpStatus: " + code + " for url: " + url);
-                return null;
-            }
-            HttpEntity entity = response.getEntity();
-            if (entity != null) {
-                return EntityUtils.toString(entity);
-            }
-        } catch (IOException e) {
-            Log.e(TAG, "Couldn't retrieve data from url " + url, e);
+    protected String retrieve(String _url) {
+        URL url = new URL(_url);
+        HttpURLConnection conn = (HttpsURLConnection) url.openConnection();
+        conn.setRequestProperty("Host", url.getHost());
+        conn.setRequestProperty("User-agent", UA);
+        conn.setRequestMethod("GET");
+        conn.setReadTimeout(60000);
+        conn.setConnectTimeout(5000);
+        conn.setDoInput(true);
+        BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+        StringBuilder buffer = new StringBuilder("");
+        String line = "";
+        while ((line = in.readLine()) != null) {
+            buffer.append(line);
         }
-        return null;
+        in.close();
+        return buffer.toString();
     }
 
     public abstract WeatherInfo getCustomWeather(String id, boolean metric);
