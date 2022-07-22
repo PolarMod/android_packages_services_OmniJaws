@@ -15,8 +15,8 @@
     <permission android:name="org.omnirom.omnijaws.READ_WEATHER" />
 
     <uses-sdk
-        android:minSdkVersion="29"
-        android:targetSdkVersion="30" />
+        android:minSdkVersion="24"
+        android:targetSdkVersion="25" />
 
     <application
         android:allowBackup="true"
