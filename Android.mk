@@ -24,6 +24,7 @@ LOCAL_PRODUCT_MODULE := true
 LOCAL_MODULE_TAGS := optional
 LOCAL_SDK_VERSION := system_current
 LOCAL_REQUIRED_MODULES := default_permissions_org.omnirom.omnijaws.xml
+LOCAL_OPTIONAL_USES_LIBRARIES += org.apache.http.legacy
 include $(BUILD_PACKAGE)
 
 include $(CLEAR_VARS)
