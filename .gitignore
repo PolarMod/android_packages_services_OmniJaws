@@ -3,4 +3,5 @@
 project.properties
 bin/
 gen/
-
+*.iml
+.idea/*
