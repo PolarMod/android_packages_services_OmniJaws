@@ -62,7 +62,7 @@
             android:readPermission="org.omnirom.omnijaws.READ_WEATHER" />
 
 	<receiver android:name=".SystemReceiver"
-		  android:exported="true">
+		  android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
