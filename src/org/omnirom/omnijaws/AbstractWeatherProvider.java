@@ -44,7 +44,7 @@ import android.util.Log;
 
 public abstract class AbstractWeatherProvider {
     private static final String TAG = "AbstractWeatherProvider";
-    private final String UA = "OmniJaws/1.2-polar";
+    private static final String UA = "OmniJaws/1.3-polar";
     private static final boolean DEBUG = true;
     protected Context mContext;
 

@@ -17,13 +17,26 @@
  */
 package org.omnirom.omnijaws;
 
+import android.app.ActionBar;
 import android.os.Bundle;
+import android.util.Log;
 
 public class SettingsActivity extends SettingsActivityService  {
 
+    private static final String TAG = "OmniJaws/SettingsActivity";
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         mShowIconPack = true;
         super.onCreate(savedInstanceState);
+        ActionBar ab = getActionBar();
+
+        // Enable the Up button
+        if(ab != null){
+            ab.setDisplayHomeAsUpEnabled(true);
+        } else {
+            Log.w(TAG, "Actionbar is null!");
+        }
     }
 }
