@@ -23,15 +23,15 @@ public class AccuWeatherProvider extends AbstractWeatherProvider {
     private static final String TAG = "AccuWeatherProvider";
 
     private static final String URL_LOCATION =
-            "http://api.accuweather.com/locations/v1/cities/translate.json?q=%s&apikey=%s&language=%s";
+            "https://api.accuweather.com/locations/v1/cities/translate.json?q=%s&apikey=%s&language=%s";
     private static final String URL_PLACES =
-            "http://api.accuweather.com/locations/v1/cities/geoposition/search.json?q=%f,%f&apikey=%s&language=%s";
+            "https://api.accuweather.com/locations/v1/cities/geoposition/search.json?q=%f,%f&apikey=%s&language=%s";
     private static final String URL_WEATHER =
-            "http://api.accuweather.com/currentconditions/v1/%s?apikey=%s&language=%s&details=true";
+            "https://api.accuweather.com/currentconditions/v1/%s?apikey=%s&language=%s&details=true";
     private static final String URL_FORECAST =
-            "http://api.accuweather.com/forecasts/v1/daily/10day/%s?apikey=%s&language=%s&metric=%s";
+            "https://api.accuweather.com/forecasts/v1/daily/10day/%s?apikey=%s&language=%s&metric=%s";
     private static final String URL_LOCATION_INFO =
-            "http://api.accuweather.com/locations/v1/%s?apikey=%s&language=%s";
+            "https://api.accuweather.com/locations/v1/%s?apikey=%s&language=%s";
 
 
     public AccuWeatherProvider(Context context) {
