@@ -17,7 +17,8 @@
 -->
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     android:key="weather_settings"
-    android:title="@string/service_settings_title">
+    android:title="@string/service_settings_title"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
     <SwitchPreference
         android:defaultValue="false"
