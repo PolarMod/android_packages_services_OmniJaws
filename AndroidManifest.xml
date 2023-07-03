@@ -26,7 +26,7 @@
             android:directBootAware="true"
             android:icon="@drawable/omnirom_logo">
 
-        <!--<uses-library android:name="org.apache.http.legacy" android:required="false" />-->
+        <uses-library android:name="org.apache.http.legacy" android:required="false" />
 
         <activity
                 android:name=".SettingsActivity"
